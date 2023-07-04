@@ -39,7 +39,7 @@ export default function Area() {
                 <ul>
                   {areaMenus.map((areaMenu, index) => {
                     return (
-                      <li className="animate__animated animate__fadeInLeft cursor-pointer bg-transparent">
+                      <li className="animate__animated animate__fadeInLeft cursor-pointer bg-transparent" key={index}>
                         <a
                           onMouseEnter={() => {
                             setDescription(targetAddr[index]);
@@ -74,7 +74,7 @@ export default function Area() {
               <div className="content-area">
                 <h2 id="title">{description}</h2>
                 <h3 id="sub-title"></h3>
-                <p className="information">Anthony's new generation Uniswap </p>
+                <p className="information">Uniswap</p>
               </div>
             </div>
           </div>

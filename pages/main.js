@@ -274,7 +274,7 @@ export default function Swap() {
                 <ul className=" w-max-[470px] text-right">
                   {areaMenus.map((areaMenu, index) => {
                     return (
-                      <li className="animate__animated animate__fadeInLeft cursor-pointer bg-transparent after:w-[100%] md:after:w-[110%]">
+                      <li className="animate__animated animate__fadeInLeft cursor-pointer bg-transparent after:w-[100%] md:after:w-[110%]" key={index}>
                         <a
                           onMouseEnter={() => {
                             setDescription(targetAddr[index]);
@@ -298,7 +298,7 @@ export default function Swap() {
                             ? subMenus[index].map((subMenu, subindex) => {
                                 console.log(subMenu);
                                 return (
-                                  <li class="link_animate">
+                                  <li class="link_animate" key={index}>
                                     <span class="hide">{subMenu}</span>
                                     <a href={subMenu}>{subMenu}</a>
                                   </li>
@@ -326,7 +326,7 @@ export default function Swap() {
               <div className="content-area">
                 <h2 id="title" className="text-sm">{description}</h2>
                 <h3 id="sub-title"></h3>
-                <p className="information">Anthony's new generation Uniswap</p>
+                <p className="information">Uniswap</p>
               </div>
             </div>
           </div>

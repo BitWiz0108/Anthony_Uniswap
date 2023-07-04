@@ -64,7 +64,7 @@ export default function Home() {
               }`}
             >
               {subMenus.map((subMenu, index) => (
-                <div className="relative w-full h-16 lg:h-24 items-center justify-center">
+                <div className="relative w-full h-16 lg:h-24 items-center justify-center" key={index}>
                   <HomeButton
                     label={subMenu}
                     setDescription={(e) => {
