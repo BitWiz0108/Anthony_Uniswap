@@ -209,7 +209,7 @@ export default function Wallet() {
   }, []);
   */
   return (
-    <div className="relative z-50">
+    <div className="relative z-50 md:absolute md:right-10 md:top-5">
       <div className="relative">
         {wallets.length && location.href.includes("/wallet") ? (
           <button

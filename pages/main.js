@@ -36,6 +36,7 @@ export default function Swap() {
   const [loading, setLoading] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isSimpleView, setIsSimpleView] = useState(false);
+  const [isMenuToggle, setIsMenuToggle] = useState(false);
 
   const [isAreaClicked, setIsAreaClicked] = useState(false);
   const [isHoveredMenu, setIsHoveredMenu] = useState(-1);
@@ -252,7 +253,7 @@ export default function Swap() {
 
   return (
     <Layout title="Swap">
-      <div className="absolute flex justify-start items-start top-24 left-4 md:top-12 md:left-32 z-50">
+      <div className="absolute hidden md:flex justify-start items-start top-24 left-4 md:top-12 md:left-32 z-50">
         <Switch
           checked={isSimpleView}
           setChecked={setIsSimpleView}
@@ -260,6 +261,16 @@ export default function Swap() {
           labelPos="right"
         />
       </div>
+
+      {/* <div className="absolute flex md:hidden justify-start items-start top-24 left-4 md:top-12 md:left-32 z-50">
+        <Switch
+          checked={isMenuToggle}
+          setChecked={setIsMenuToggle}
+          label="Toggle"
+          labelPos="right"
+        />
+      </div> */}
+
       {!isSimpleView ? (
         <div className="container-fluide absolute left-0 top-0 w-full h-screen">
           <div
@@ -269,7 +280,7 @@ export default function Swap() {
                 : ""
             }`}
           >
-            <div className="col-half pt-40">
+            <div className="col-half pt-40 hidden md:block">
               <div className="menu-area mobile w-72">
                 <ul className=" w-max-[470px] text-right">
                   {areaMenus.map((areaMenu, index) => {
@@ -335,7 +346,7 @@ export default function Swap() {
         ""
       )}
 
-      <div className="relative z-30 px-10 md:px-2">
+      <div className="relative z-30 px-10 md:px-2 overflow-y-auto">
         <div
           className={`container ${
             isModalVisible ? "opacity-100" : "opacity-0"
@@ -490,7 +501,7 @@ export default function Swap() {
         </div>
 
         {modal && modal.type == "selectToken" ? (
-          <div className="modal z-0" onClick={() => setModal()}>
+          <div className="modal z-50" onClick={() => setModal()}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
               <h1 className="modal-title">Select a token</h1>
               {pools.map((p) => (

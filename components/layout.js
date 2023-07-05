@@ -42,7 +42,7 @@ export default function Layout({ title, children }) {
 
       {children}
 
-      <div className="absolute bottom-12 footer w-full z-30">
+      <div className="absolute bottom-0 footer w-full z-30">
         <a href="https://www.eldorado.market/" target="_blank" rel="noreferrer">
           Website
         </a>
